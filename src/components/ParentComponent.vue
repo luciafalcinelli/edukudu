@@ -7,26 +7,20 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { ref } from 'vue';
 import ChildComponent from './ChildComponent.vue';
 
-export default {
-  components: { ChildComponent },
-  setup() {
-    const state = ref({ bool: true, text: 'Initial text' });
+const state = ref({ bool: true, text: 'Initial text' });
 
-    function toggleBool() {
-      state.value.bool = !state.value.bool;
-    }
+function toggleBool() {
+  state.value.bool = !state.value.bool;
+}
 
-    function updateText(newText) {
-      state.value.text = newText;
-    }
+function updateText(newText) {
+  state.value.text = newText;
+}
 
-    return { state, toggleBool, updateText };
-  }
-};
 </script>
 
 <style scoped>
